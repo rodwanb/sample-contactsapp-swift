@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct ApplicationState {
+struct ApplicationState : Equatable {
+    
     let contactsListState: ContactsListState
     
     static func initial() -> ApplicationState {
         return ApplicationState(contactsListState: ContactsListState.initial())
+    }
+
+    static func == (lhs: ApplicationState, rhs: ApplicationState) -> Bool {
+        return lhs.contactsListState == rhs.contactsListState
     }
 }

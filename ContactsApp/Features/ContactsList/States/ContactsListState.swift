@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct ContactsListState {
+struct ContactsListState : Equatable {
     let contacts: [Contact]
     
     static func initial() -> ContactsListState {
         return ContactsListState(contacts: [])
+    }
+    
+    static func == (lhs: ContactsListState, rhs: ContactsListState) -> Bool {
+        return lhs.contacts.elementsEqual(rhs.contacts)
     }
 }

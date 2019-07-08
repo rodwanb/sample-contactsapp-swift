@@ -9,6 +9,13 @@
 import Foundation
 
 struct Contact {
-    let Name = ""
-    let Email = ""
+    var Name = ""
+    var Email = ""
+}
+
+extension Contact : Equatable {
+    static func == (lhs: Contact, rhs: Contact) -> Bool {
+        return lhs.Name == rhs.Name &&
+            lhs.Email == rhs.Email
+    }
 }

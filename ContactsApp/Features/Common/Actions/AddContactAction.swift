@@ -17,3 +17,7 @@ class AddContactAction : Action {
         self.email = email
     }
 }
+
+class LoadContactsAction: Action {
+    
+}
